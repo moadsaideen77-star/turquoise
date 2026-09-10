@@ -7,219 +7,108 @@
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,Tahoma,sans-serif;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,Tahoma,sans-serif;
 }
 
 body{
-  background:#f4f7f9;
-  color:#17212b;
+    background:#f4f7f9;
+    color:#17212b;
 }
 
 header{
-  background:#08a6a6;
-  color:white;
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    background:linear-gradient(135deg,#087f91,#08a6b5);
+    color:white;
+    padding:18px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
 }
 
 .logo{
-  font-size:25px;
-  font-weight:bold;
+    font-size:25px;
+    font-weight:bold;
 }
 
-.admin{
-  background:rgba(255,255,255,.18);
-  padding:10px 15px;
-  border-radius:12px;
+.admin-info{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.admin-avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:white;
+    color:#087f91;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
 }
 
 .container{
-  padding:20px;
-  max-width:1200px;
-  margin:auto;
+    display:flex;
+    min-height:calc(100vh - 78px);
 }
 
-.welcome{
-  background:white;
-  border-radius:18px;
-  padding:25px;
-  margin-bottom:20px;
-  box-shadow:0 4px 15px rgba(0,0,0,.06);
+.sidebar{
+    width:245px;
+    background:#fff;
+    padding:20px 14px;
+    box-shadow:2px 0 12px rgba(0,0,0,.06);
 }
 
-.welcome h1{
-  margin-bottom:8px;
+.menu-title{
+    color:#888;
+    font-size:13px;
+    margin:10px 12px;
 }
 
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-  margin-bottom:25px;
+.menu-btn{
+    width:100%;
+    border:0;
+    background:white;
+    padding:14px;
+    margin:4px 0;
+    border-radius:12px;
+    text-align:right;
+    font-size:15px;
+    cursor:pointer;
+    color:#333;
 }
 
-.card{
-  background:white;
-  padding:20px;
-  border-radius:18px;
-  box-shadow:0 4px 15px rgba(0,0,0,.06);
+.menu-btn:hover,
+.menu-btn.active{
+    background:#e8f8fa;
+    color:#087f91;
+    font-weight:bold;
 }
 
-.card .icon{
-  font-size:30px;
-  margin-bottom:12px;
+.main{
+    flex:1;
+    padding:25px;
 }
 
-.card h3{
-  color:#65727d;
-  font-size:15px;
-  margin-bottom:8px;
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
 }
 
-.number{
-  font-size:28px;
-  font-weight:bold;
+.page-title{
+    font-size:26px;
+    font-weight:bold;
 }
 
-.section-title{
-  margin:25px 0 15px;
-}
-
-.menu{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-}
-
-.menu button{
-  border:0;
-  background:white;
-  padding:22px;
-  border-radius:18px;
-  text-align:right;
-  cursor:pointer;
-  font-size:17px;
-  font-weight:bold;
-  box-shadow:0 4px 15px rgba(0,0,0,.06);
-  transition:.2s;
-}
-
-.menu button:hover{
-  transform:translateY(-3px);
-}
-
-.menu span{
-  display:block;
-  font-size:28px;
-  margin-bottom:12px;
-}
-
-footer{
-  text-align:center;
-  color:#7b8790;
-  padding:30px 10px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="logo">🚕 تركواز</div>
-  <div class="admin">👑 الإدارة الرئيسية</div>
-</header>
-
-<div class="container">
-
-  <div class="welcome">
-    <h1>مرحبًا بك في لوحة إدارة تركواز</h1>
-    <p>من هنا يمكنك التحكم الكامل في منصة نقل الركاب.</p>
-  </div>
-
-  <div class="stats">
-
-    <div class="card">
-      <div class="icon">👥</div>
-      <h3>إجمالي الركاب</h3>
-      <div class="number">0</div>
-    </div>
-
-    <div class="card">
-      <div class="icon">🚕</div>
-      <h3>السائقون</h3>
-      <div class="number">0</div>
-    </div>
-
-    <div class="card">
-      <div class="icon">🛣️</div>
-      <h3>الرحلات اليوم</h3>
-      <div class="number">0</div>
-    </div>
-
-    <div class="card">
-      <div class="icon">💰</div>
-      <h3>إيرادات اليوم</h3>
-      <div class="number">$0</div>
-    </div>
-
-  </div>
-
-  <h2 class="section-title">إدارة النظام</h2>
-
-  <div class="menu">
-
-    <button>
-      <span>👥</span>
-      إدارة الركاب
-    </button>
-
-    <button>
-      <span>🚕</span>
-      إدارة السائقين
-    </button>
-
-    <button>
-      <span>🛣️</span>
-      إدارة الرحلات
-    </button>
-
-    <button>
-      <span>💰</span>
-      المالية والأرباح
-    </button>
-
-    <button>
-      <span>⚠️</span>
-      الشكاوى والمشاكل
-    </button>
-
-    <button>
-      <span>👑</span>
-      مساعدو الإدارة والصلاحيات
-    </button>
-
-    <button>
-      <span>📊</span>
-      التقارير والإحصائيات
-    </button>
-
-    <button>
-      <span>⚙️</span>
-      إعدادات النظام
-    </button>
-
-  </div>
-
-</div>
-
-<footer>
-  تركواز © 2026 — لوحة الإدارة الرئيسية
-</footer>
-
-</body>
-</html>
+.status{
+    background:#e9f9ef;
+    color:#198754;
+    padding:9px 14px;
+    border-radius:20px;
+    font-size:13
