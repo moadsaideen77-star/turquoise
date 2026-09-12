@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>تركواز | لوحة الإدارة</title>
 
 <style>
@@ -15,15 +16,18 @@
 
 body{
   background:#f3f7f8;
-  color:#17282d
+  color:#17282d;
+  min-height:100vh
 }
 
 button{
   font-family:inherit;
-  cursor:pointer
+  cursor:pointer;
+  border:0
 }
 
-/* SIDEBAR */
+/* ================= SIDEBAR ================= */
+
 .sidebar{
   position:fixed;
   right:0;
@@ -34,7 +38,7 @@ button{
   color:white;
   padding:20px 15px;
   overflow:auto;
-  z-index:10
+  z-index:100
 }
 
 .logo{
@@ -52,7 +56,8 @@ button{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:30px
+  font-size:30px;
+  box-shadow:0 8px 25px #00000025
 }
 
 .logo h1{
@@ -78,13 +83,15 @@ button{
   text-decoration:none;
   padding:12px;
   margin:4px 0;
-  border-radius:12px
+  border-radius:12px;
+  transition:.2s
 }
 
 .menu-item:hover,
 .menu-item.active{
   background:#ffffff14;
-  color:white
+  color:white;
+  transform:translateX(-2px)
 }
 
 .menu-icon{
@@ -111,7 +118,8 @@ button{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:21px
+  font-size:21px;
+  flex-shrink:0
 }
 
 .admin-name{
@@ -125,7 +133,8 @@ button{
   margin-top:4px
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
+
 .main{
   margin-right:250px;
   padding:20px
@@ -139,4 +148,26 @@ button{
   justify-content:space-between;
   align-items:center;
   box-shadow:0 4px 18px #00000008;
- 
+  margin-bottom:20px
+}
+
+.page-title h2{
+  font-size:21px;
+  margin-bottom:5px
+}
+
+.page-title p{
+  color:#7b9297;
+  font-size:12px
+}
+
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.icon-btn{
+  width:42px;
+  height:42px;
+  border
