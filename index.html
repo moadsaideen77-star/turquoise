@@ -18,22 +18,29 @@
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Arial,Tahoma,sans-serif;
   background:#f4f8f8;
   color:#17282d;
   direction:rtl;
+  overflow-x:hidden;
 }
 
 button,
 input,
-select{
+select,
+textarea{
   font-family:inherit;
 }
 
 button{
   cursor:pointer;
 }
+
 
 /* =========================
    COLORS
@@ -54,6 +61,7 @@ button{
   --shadow:0 5px 20px #0000000a;
 }
 
+
 /* =========================
    APP
 ========================= */
@@ -62,6 +70,7 @@ button{
   min-height:100vh;
   display:flex;
 }
+
 
 /* =========================
    SIDEBAR
@@ -176,6 +185,7 @@ button{
   font-size:9px;
 }
 
+
 /* =========================
    MAIN
 ========================= */
@@ -185,6 +195,7 @@ button{
   width:calc(100% - 260px);
   min-height:100vh;
 }
+
 
 /* =========================
    TOP BAR
@@ -272,6 +283,7 @@ button{
   margin-top:4px;
 }
 
+
 /* =========================
    CONTENT
 ========================= */
@@ -279,6 +291,7 @@ button{
 .content{
   padding:25px;
 }
+
 
 /* =========================
    STATS
@@ -338,8 +351,9 @@ button{
   font-size:10px;
 }
 
+
 /* =========================
-   GRID
+   DASHBOARD GRID
 ========================= */
 
 .dashboard-grid{
@@ -381,6 +395,7 @@ button{
   padding:7px 10px;
   font-size:10px;
 }
+
 
 /* =========================
    USERS
@@ -442,8 +457,19 @@ button{
 .user-status{
   width:8px;
   height:8px;
-   border-radius:50%;
+  border-radius:50%;
+  display:inline-block;
+  margin-left:5px;
 }
+
+.user-status.online{
+  background:#22c55e;
+}
+
+.user-status.offline{
+  background:#cbd5d1;
+}
+
 
 /* =========================
    RANKING
@@ -508,6 +534,7 @@ button{
   font-weight:bold;
 }
 
+
 /* =========================
    QUICK ACTIONS
 ========================= */
@@ -531,8 +558,6 @@ button{
 }
 
 .quick-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px #000000.quick-card:hover{
   transform:translateY(-3px);
   box-shadow:0 10px 25px #00000012;
 }
@@ -562,49 +587,6 @@ button{
 
 
 /* =========================
-   STATISTICS
-========================= */
-
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-  margin-bottom:20px;
-}
-
-.stat-card{
-  background:white;
-  border-radius:18px;
-  padding:18px;
-  box-shadow:var(--shadow);
-  border:1px solid #f0f4f4;
-}
-
-.stat-card .stat-icon{
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  background:#e8f8f6;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:18px;
-  margin-bottom:10px;
-}
-
-.stat-card strong{
-  display:block;
-  font-size:20px;
-  margin-bottom:4px;
-}
-
-.stat-card span{
-  color:var(--muted);
-  font-size:10px;
-}
-
-
-/* =========================
    TABLE
 ========================= */
 
@@ -614,7 +596,7 @@ button{
   padding:18px;
   box-shadow:var(--shadow);
   border:1px solid #f0f4f4;
-  margin-bottom:  margin-bottom:20px;
+  margin-bottom:20px;
 }
 
 .table-card h3{
@@ -658,7 +640,7 @@ table tr:hover td{
 
 
 /* =========================
-   USER ROW
+   USER CELL
 ========================= */
 
 .user-cell{
@@ -677,45 +659,6 @@ table tr:hover td{
   justify-content:center;
   font-size:16px;
   flex-shrink:0;
-}
-
-.user-info{
-  flex:1;
-}
-
-.user-info strong{
-  display:block;
-  font-size:12px;
-  margin-bottom:4px;
-}
-
-.user-info small{
-  color:var(--muted);
-  font-size:9px;
-}
-
-.user-level{
-  background:#fff6df;
-  color:#b27a16;
-  padding:5px 8px;
-  border-radius:12px;
-  font-size:9px;
-}
-
-.user-status{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  display:inline-block;
-  margin-left:5px;
-}
-
-.user-status.online{
-  background:#22c55e;
-}
-
-.user-status.offline{
-  background:#cbd5d1;
 }
 
 
@@ -771,7 +714,6 @@ table tr:hover td{
   border-radius:10px;
   background:#f2f7f7;
   color:#168c7d;
-  cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -823,7 +765,6 @@ table tr:hover td{
   border:1px solid #e2e8e7;
   border-radius:12px;
   outline:none;
-  font-family:inherit;
   font-size:11px;
   background:#fff;
   transition:.2s;
@@ -843,12 +784,10 @@ table tr:hover td{
 
 .primary-btn{
   border:0;
-  background  background:#168c7d;
+  background:#168c7d;
   color:white;
   padding:11px 18px;
   border-radius:12px;
-  cursor:pointer;
-  font-family:inherit;
   font-size:11px;
   font-weight:bold;
   transition:.2s;
@@ -865,8 +804,6 @@ table tr:hover td{
   color:#168c7d;
   padding:11px 18px;
   border-radius:12px;
-  cursor:pointer;
-  font-family:inherit;
   font-size:11px;
   font-weight:bold;
   transition:.2s;
@@ -946,6 +883,7 @@ table tr:hover td{
     opacity:0;
     transform:translateY(15px) scale(.97);
   }
+
   to{
     opacity:1;
     transform:translateY(0) scale(1);
@@ -968,15 +906,14 @@ table tr:hover td{
   width:34px;
   height:34px;
   border:0;
-  border-radius:10border-radius:10px;
-background:#f2f5f5;
-color:#666;
-cursor:pointer;
-font-size:16px;
-display:flex;
-align-items:center;
-justify-content:center;
-transition:.2s;
+  border-radius:10px;
+  background:#f2f5f5;
+  color:#666;
+  font-size:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.2s;
 }
 
 .modal-close:hover{
@@ -1051,7 +988,57 @@ transition:.2s;
    MOBILE
 ========================= */
 
+@media(max-width:900px){
+
+  .sidebar{
+    width:220px;
+  }
+
+  .main{
+    margin-right:220px;
+    width:calc(100% - 220px);
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .dashboard-grid{
+    grid-template-columns:1fr;
+  }
+
+  .quick-actions{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+
 @media(max-width:700px){
+
+  .sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+    border-left:0;
+    border-bottom:1px solid var(--border);
+  }
+
+  .app{
+    display:block;
+  }
+
+  .main{
+    margin-right:0;
+    width:100%;
+  }
+
+  .topbar{
+    padding:0 15px;
+  }
+
+  .content{
+    padding:15px;
+  }
 
   .form-grid{
     grid-template-columns:1fr;
@@ -1068,24 +1055,49 @@ transition:.2s;
   table{
     min-width:650px;
   }
-
 }
+
 
 @media(max-width:480px){
 
   .stats-grid{
     grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .stat-card{
+    padding:14px;
+  }
+
+  .stat-card strong{
+    font-size:18px;
   }
 
   .quick-actions{
     grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .quick-card{
+    padding:14px;
+  }
+
+  .admin-info{
+    display:none;
+  }
+
+  .page-title h1{
+    font-size:17px;
+  }
+
+  .page-title p{
+    font-size:9px;
   }
 
   .primary-btn,
   .secondary-btn{
     width:100%;
   }
-
 }
 
 
@@ -1108,19 +1120,893 @@ textarea:focus-visible{
   outline-offset:2px;
 }
 
-*{
-  box-sizing:border-box;
-}
+</style>
+</head>
 
-html{
-  scroll-behavior:smooth;
-}
 
-body{
-  overflow-x:hidden;
-}
+<body>
+
+<div class="app">
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      <div class="logo-icon">💠</div>
+
+      <div class="logo-text">
+        <strong>تركواز</strong>
+        <small>لوحة الإدارة</small>
+      </div>
+    </div>
+
+
+    <div class="menu-title">الرئيسية</div>
+
+    <nav class="menu">
+
+      <button class="menu-item active">
+        <span class="menu-icon">🏠</span>
+        <span>الرئيسية</span>
+      </button>
+
+      <button class="menu-item">
+        <span class="menu-icon">👥</span>
+        <span>المستخدمون</span>
+        <span class="menu-badge">1240</span>
+      </button>
+
+      <button class="menu-item">
+        <span class="menu-icon">🚗</span>
+        <span>الرحلات</span>
+      </button>
+
+      <button class="menu-item">
+        <span class="menu-icon">💰</span>
+        <span>المدفوعات</span>
+      </button>
+
+    </nav>
+
+
+    <div class="menu-title">الإدارة</div>
+
+    <nav class="menu">
+
+      <button class="menu-item">
+        <span class="menu-icon">👑</span>
+        <span>الإداريون</span>
+      </button>
+
+      <button class="menu-item">
+        <span class="menu-icon">🔐</span>
+        <span>الصلاحيات</span>
+      </button>
+
+      <button class="menu-item">
+        <span class="menu-icon">📊</span>
+        <span>الإحصائيات</span>
+      </button>
+
+      <button class="menu-item">
+        <span class="menu-icon">⚙️</span>
+        <span>الإعدادات</span>
+      </button>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main class="main">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+      <div class="page-title">
+        <h1>لوحة التحكم</h1>
+        <p>مرحباً بك في لوحة إدارة تركواز</p>
+      </div>
+
+
+      <div class="top-actions">
+
+        <button class="icon-btn" title="الإشعارات">
+          🔔
+        </button>
+
+        <button class="icon-btn" title="البحث">
+          🔎
+        </button>
+
+
+        <div class="admin-mini">
+
+          <div class="admin-avatar">
+            👑
+          </div>
+
+          <div class="admin-info">
+            <strong>المدير الرئيسي</strong>
+            <small>صلاحيات كاملة</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="content">
+
+
+      <!-- =========================
+           STATS
+      ========================== -->
+
+      <div class="stats-grid">
+
+
+        <div class="stat-card">
+
+          <div class="stat-top">
+
+            <div class="stat-icon">
+              👥
+            </div>
+
+            <div class="stat-change">
+              +12%
+            </div>
+
+          </div>
+
+          <strong>1,240</strong>
+          <small>إجمالي المستخدمين</small>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div class="stat-top">
+
+            <div class="stat-icon">
+              🚗
+            </div>
+
+            <div class="stat-change">
+              +8%
+            </div>
+
+          </div>
+
+          <strong>486</strong>
+          <small>الرحلات اليوم</small>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div class="stat-top">
+
+            <div class="stat-icon">
+              💰
+            </div>
+
+            <div class="stat-change">
+              +18%
+            </div>
+
+          </div>
+
+          <strong>$8,420</strong>
+          <small>إيرادات اليوم</small>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div class="stat-top">
+
+            <div class="stat-icon">
+              🟢
+            </div>
+
+            <div class="stat-change">
+              +5%
+            </div>
+
+          </div>
+
+          <strong>312</strong>
+          <small>المستخدمون النشطون</small>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           DASHBOARD
+      ========================== -->
+
+      <div class="dashboard-grid">
+
+
+        <!-- USERS -->
+
+        <div class="panel">
+
+          <div class="panel-header">
+
+            <div>
+              <h3>آخر المستخدمين</h3>
+              <span>أحدث الحسابات المسجلة</span>
+            </div>
+
+            <button class="view-all">
+              عرض الكل
+            </button>
+
+          </div>
+
+
+          <div class="user-list">
+
+
+            <div class="user-item">
+
+              <div class="user-avatar">👨</div>
+
+              <div class="user-info">
+                <strong>محمد أحمد</strong>
+                <small>
+                  <span class="user-status online"></span>
+                  متصل الآن
+                </small>
+              </div>
+
+              <div class="user-level">
+                المستوى 12
+              </div>
+
+            </div>
+
+
+            <div class="user-item">
+
+              <div class="user-avatar">👩</div>
+
+              <div class="user-info">
+                <strong>سارة علي</strong>
+                <small>
+                  <span class="user-status online"></span>
+                  متصلة الآن
+                </small>
+              </div>
+
+              <div class="user-level">
+                المستوى 20
+              </div>
+
+            </div>
+
+
+            <div class="user-item">
+
+              <div class="user-avatar">👨</div>
+
+              <div class="user-info">
+                <strong>خالد محمود</strong>
+                <small>
+                  <span class="user-status offline"></span>
+                  غير متصل
+                </small>
+              </div>
+
+              <div class="user-level">
+                المستوى 8
+              </div>
+
+            </div>
+
+
+            <div class="user-item">
+
+              <div class="user-avatar">👩</div>
+
+              <div class="user-info">
+                <strong>نور حسين</strong>
+                <small>
+                  <span class="user-status online"></span>
+                  متصلة الآن
+                </small>
+              </div>
+
+              <div class="user-level">
+                المستوى 35
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RANKING -->
+
+        <div class="panel">
+
+          <div class="panel-header">
+
+            <div>
+              <h3>أفضل المستخدمين</h3>
+              <span>حسب النشاط</span>
+            </div>
+
+          </div>
+
+
+          <div class="rank-list">
+
+
+            <div class="rank-item">
+
+              <div class="rank-number">
+                1
+              </div>
+
+              <div class="rank-avatar">
+                👑
+              </div>
+
+              <div class="rank-info">
+                <strong>أحمد</strong>
+                <small>المستوى 50</small>
+              </div>
+
+              <div class="rank-score">
+                9,850
+              </div>
+
+            </div>
+
+
+            <div class="rank-item">
+
+              <div class="rank-number">
+                2
+              </div>
+
+              <div class="rank-avatar">
+                ⭐
+              </div>
+
+              <div class="rank-info">
+                <strong>سارة</strong>
+                <small>المستوى 42</small>
+              </div>
+
+              <div class="rank-score">
+                8,740
+              </div>
+
+            </div>
+
+
+            <div class="rank-item">
+
+              <div class="rank-number">
+                3
+              </div>
+
+              <div class="rank-avatar">
+                💎
+              </div>
+
+              <div class="rank-info">
+                <strong>محمد</strong>
+                <small>المستوى 38</small>
+              </div>
+
+              <div class="rank-score">
+                7,920
+              </div>
+
+            </div>
+
+
+            <div class="rank-item">
+
+              <div class="rank-number">
+                4
+              </div>
+
+              <div class="rank-avatar">
+                🏆
+              </div>
+
+              <div class="rank-info">
+                <strong>نور</strong>
+                <small>المستوى 31</small>
+              </div>
+
+              <div class="rank-score">
+                6,850
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           QUICK ACTIONS
+      ========================== -->
+
+      <div class="quick-actions">
+
+
+        <div class="quick-card">
+
+          <div class="quick-icon">
+            👤
+          </div>
+
+          <strong>إضافة مستخدم</strong>
+          <small>إنشاء حساب مستخدم جديد</small>
+
+        </div>
+
+
+        <div class="quick-card">
+
+          <div class="quick-icon">
+            👑
+          </div>
+
+          <strong>إضافة إداري</strong>
+          <small>إنشاء حساب إداري جديد</small>
+
+        </div>
+
+
+        <div class="quick-card">
+
+          <div class="quick-icon">
+            📢
+          </div>
+
+          <strong>إرسال إشعار</strong>
+          <small>إرسال إعلان للمستخدمين</small>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           USERS TABLE
+      ========================== -->
+
+      <div class="table-card">
+
+        <h3>المستخدمون</h3>
+
+        <div class="table-wrap">
+
+          <table>
+
+            <thead>
+
+              <tr>
+                <th>المستخدم</th>
+                <th>المستوى</th>
+                <th>الحالة</th>
+                <th>التسجيل</th>
+                <th>الإجراء</th>
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+              <tr>
+
+                <td>
+
+                  <div class="user-cell">
+
+                    <div class="avatar">
+                      👨
+                    </div>
+
+                    <div>
+                      <strong>محمد أحمد</strong>
+                    </div>
+
+                  </div>
+
+                </td>
+
+                <td>
+                  <span class="badge badge-warning">
+                    المستوى 12
+                  </span>
+                </td>
+
+                <td>
+                  <span class="badge badge-success">
+                    متصل
+                  </span>
+                </td>
+
+                <td>
+                  اليوم
+                </td>
+
+                <td>
+
+                  <div class="action-btns">
+
+                    <button class="small-btn" title="عرض">
+                      👁
+                    </button>
+
+                    <button class="small-btn" title="تعديل">
+                      ✏️
+                    </button>
+
+                  </div>
+
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+
+                  <div class="user-cell">
+
+                    <div class="avatar">
+                      👩
+                    </div>
+
+                    <div>
+                      <strong>سارة علي</strong>
+                    </div>
+
+                  </div>
+
+                </td>
+
+                <td>
+                  <span class="badge badge-warning">
+                    المستوى 20
+                  </span>
+                </td>
+
+                <td>
+                  <span class="badge badge-success">
+                    متصلة
+                  </span>
+                </td>
+
+                <td>
+                  أمس
+                </td>
+
+                <td>
+
+                  <div class="action-btns">
+
+                    <button class="small-btn">
+                      👁
+                    </button>
+
+                    <button class="small-btn">
+                      ✏️
+                    </button>
+
+                  </div>
+
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+
+                  <div class="user-cell">
+
+                    <div class="avatar">
+                      👨
+                    </div>
+
+                    <div>
+                      <strong>خالد محمود</strong>
+                    </div>
+
+                  </div>
+
+                </td>
+
+                <td>
+                  <span class="badge badge-info">
+                    المستوى 8
+                  </span>
+                </td>
+
+                <td>
+                  <span class="badge badge-danger">
+                    غير متصل
+                  </span>
+                </td>
+
+                <td>
+                  منذ يومين
+                </td>
+
+                <td>
+
+                  <div class="action-btns">
+
+                    <button class="small-btn">
+                      👁
+                    </button>
+
+                    <button class="small-btn">
+                      ✏️
+                    </button>
+
+                  </div>
+
+                </td>
+
+              </tr>
+
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           FORM
+      ========================== -->
+
+      <div class="form-card">
+
+        <div class="panel-header">
+
+          <div>
+            <h3>إضافة مستخدم</h3>
+            <span>إنشاء حساب جديد</span>
+          </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+          <div class="form-group">
+
+            <label>
+              اسم المستخدم
+            </label>
+
+            <input
+              type="text"
+              placeholder="اكتب اسم المستخدم"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              رقم الهاتف
+            </label>
+
+            <input
+              type="tel"
+              placeholder="اكتب رقم الهاتف"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              المستوى
+            </label>
+
+            <select>
+
+              <option>المستوى 1</option>
+              <option>المستوى 10</option>
+              <option>المستوى 20</option>
+              <option>المستوى 30</option>
+              <option>المستوى 50</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              الحالة
+            </label>
+
+            <select>
+
+              <option>نشط</option>
+              <option>غير نشط</option>
+              <option>محظور</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <button class="primary-btn">
+          حفظ المستخدم
+        </button>
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div class="modal" id="mainModal">
+
+  <div class="modal-box">
+
+    <div class="modal-header">
+
+      <h3>
+        رسالة النظام
+      </h3>
+
+      <button
+        class="modal-close"
+        onclick="closeModal()">
+        ×
+      </button>
+
+    </div>
+
+    <div class="empty-state">
+
+      <div class="empty-icon">
+        ✓
+      </div>
+
+      <strong>
+        أهلاً بك في تركواز
+      </strong>
+
+      <p>
+        لوحة الإدارة جاهزة للعمل.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MENU
+========================= */
+
+const menuItems = document.querySelectorAll(".menu-item");
+
+menuItems.forEach(function(item){
+
+  item.addEventListener("click",function(){
+
+    menuItems.forEach(function(button){
+      button.classList.remove("active");
+    });
+
+    item.classList.add("active");
+
+  });
+
+});
 
 
 /* =========================
-   END OF STYLE
+   MODAL
 ========================= */
+
+function openModal(){
+
+  const modal = document.getElementById("mainModal");
+
+  if(modal){
+    modal.classList.add("active");
+  }
+
+}
+
+function closeModal(){
+
+  const modal = document.getElementById("mainModal");
+
+  if(modal){
+    modal.classList.remove("active");
+  }
+
+}
+
+
+/* إغلاق النافذة عند الضغط خارجها */
+
+const mainModal = document.getElementById("mainModal");
+
+if(mainModal){
+
+  mainModal.addEventListener("click",function(event){
+
+    if(event.target === mainModal){
+      closeModal();
+    }
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
