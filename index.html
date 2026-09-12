@@ -7,82 +7,136 @@
 
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,Tahoma,sans-serif;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Tahoma,sans-serif
 }
 
 body{
-    background:#f4f7f9;
-    color:#17202a;
+  background:#f3f7f8;
+  color:#17282d
 }
 
 button{
-    font-family:inherit;
-    cursor:pointer;
+  font-family:inherit;
+  cursor:pointer
 }
 
-.app{
-    display:flex;
-    min-height:100vh;
-}
-
-/* القائمة الجانبية */
+/* SIDEBAR */
 .sidebar{
-    width:260px;
-    background:linear-gradient(180deg,#063f47,#062f36);
-    color:white;
-    padding:25px 16px;
-    position:fixed;
-    right:0;
-    top:0;
-    bottom:0;
-    overflow-y:auto;
-    z-index:100;
+  position:fixed;
+  right:0;
+  top:0;
+  bottom:0;
+  width:250px;
+  background:linear-gradient(180deg,#063f47,#062d34);
+  color:white;
+  padding:20px 15px;
+  overflow:auto;
+  z-index:10
 }
 
 .logo{
-    text-align:center;
-    padding:10px 0 25px;
-    border-bottom:1px solid rgba(255,255,255,.12);
-    margin-bottom:18px;
+  text-align:center;
+  padding:10px 0 20px;
+  border-bottom:1px solid #ffffff18
 }
 
 .logo-icon{
-    width:65px;
-    height:65px;
-    border-radius:20px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,#18c7b5,#0b8290);
-    font-size:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+  width:62px;
+  height:62px;
+  margin:auto;
+  border-radius:18px;
+  background:linear-gradient(135deg,#1bcbbb,#087783);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px
 }
 
 .logo h1{
-    margin-top:12px;
-    font-size:25px;
+  margin-top:10px;
+  font-size:25px
 }
 
-.logo span{
-    color:#72e8df;
-    font-size:13px;
+.logo small{
+  color:#75e4db
 }
 
 .menu-title{
-    color:#79b9bd;
-    font-size:12px;
-    margin:20px 10px 8px;
+  color:#78b8bc;
+  font-size:12px;
+  margin:20px 10px 7px
 }
 
 .menu-item{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:13px 14px;
-    margin:5px 0;
-    border-radius:12px;
-    color
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#d8eeee;
+  text-decoration:none;
+  padding:12px;
+  margin:4px 0;
+  border-radius:12px
+}
+
+.menu-item:hover,
+.menu-item.active{
+  background:#ffffff14;
+  color:white
+}
+
+.menu-icon{
+  width:25px;
+  text-align:center;
+  font-size:18px
+}
+
+.admin{
+  margin-top:20px;
+  padding:12px;
+  border-radius:15px;
+  background:#ffffff10;
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.admin-avatar{
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ffd96b,#a86e14);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:21px
+}
+
+.admin-name{
+  font-size:13px;
+  font-weight:bold
+}
+
+.admin-role{
+  color:#ffd76a;
+  font-size:10px;
+  margin-top:4px
+}
+
+/* MAIN */
+.main{
+  margin-right:250px;
+  padding:20px
+}
+
+.topbar{
+  background:white;
+  border-radius:17px;
+  padding:15px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 4px 18px #00000008;
+ 
